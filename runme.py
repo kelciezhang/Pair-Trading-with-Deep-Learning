@@ -21,7 +21,7 @@ if __name__ == "__main__":
     
     features, rets = load_data(data_args)
     
-    # 生成数据时如果已经处理空值和无穷大，下面四行就删掉就好
+    # Omit the following four lines if you already clean the NA and inf values in the data
     features[np.where(np.isnan(features))] = 0
     rets[np.where(np.isnan(rets))] = 0
     features[np.where(features == np.inf)] = 0
